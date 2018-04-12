@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 50744018377163366}
   - component: {fileID: 61774166619254974}
   - component: {fileID: 114071289716810628}
+  - component: {fileID: 114055467780196946}
   m_Layer: 0
   m_Name: dragonblue_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +107,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114055467780196946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418656649782280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8ad7e1cac17cf43b11fbcd14e2bb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShots: 0
+  nextShot: -1
+  bullet: {fileID: 1569611330334254, guid: 6198586f9a6f8d04db59f4893ed507da, type: 2}
 --- !u!114 &114071289716810628
 MonoBehaviour:
   m_ObjectHideFlags: 1
