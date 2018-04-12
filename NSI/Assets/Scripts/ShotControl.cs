@@ -26,10 +26,18 @@ public class ShotControl : MonoBehaviour
     {
         if (other.tag == target)
         {
+            if (other.tag == "Player")
+            {
+                gameManager.playerDead();
+            }
+            else
+            {
+                Score.updateScore();
+            }
+
             Destroy(other.gameObject);
             GameObject fire = (GameObject)Instantiate(explosion,other.gameObject.transform.position,Quaternion.identity);
             Destroy(fire,1.0f);
-            Score.updateScore();
             Destroy(gameObject);
         }
     }

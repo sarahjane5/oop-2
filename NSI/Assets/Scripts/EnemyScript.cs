@@ -36,6 +36,7 @@ public class EnemyScript : MonoBehaviour {
         if (other.tag == "Player")
         {
             Destroy(other.gameObject);
+            gameManager.playerDead();
         }
     }
 }
