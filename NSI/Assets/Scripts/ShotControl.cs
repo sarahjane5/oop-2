@@ -27,6 +27,7 @@ public class ShotControl : MonoBehaviour
         if (other.tag == target)
         {
             Destroy(other.gameObject);
+            Score.updateScore();
             Destroy(gameObject);
         }
     }
