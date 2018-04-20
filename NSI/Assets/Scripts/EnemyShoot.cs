@@ -22,6 +22,10 @@ public class EnemyShoot : MonoBehaviour
         if (Time.time > nextShot)
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
+
+            //AudioSource audio = gameObject.AddComponent<AudioSource>();
+            //audio.PlayOneShot((AudioClip)Resources.Load("filename"));​
+
             nextShot = Time.time + timeBetweenShots;
         }
     }
