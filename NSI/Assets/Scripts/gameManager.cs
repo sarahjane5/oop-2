@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class gameManager : MonoBehaviour {
@@ -20,6 +21,11 @@ public class gameManager : MonoBehaviour {
             loseScreen.SetActive(true);
         }
 	}
+
+    public void restart()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public static void playerDead()
     {
