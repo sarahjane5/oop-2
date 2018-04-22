@@ -15,6 +15,7 @@ public class ShotControl : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
+        FindObjectOfType<PlayerControl>().HasShot = false;
     }
 
     void OnBecameInvisible()
