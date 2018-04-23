@@ -22,9 +22,9 @@ public class gameManager : MonoBehaviour {
         }
 	}
 
-    public void restart()
+    public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public static void playerDead()
