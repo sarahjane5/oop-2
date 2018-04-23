@@ -31,4 +31,9 @@ public class gameManager : MonoBehaviour {
     {
         isPlayerDead = true;
     }
+
+    public void Home()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
