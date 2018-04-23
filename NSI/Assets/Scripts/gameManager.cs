@@ -7,9 +7,10 @@ public class gameManager : MonoBehaviour {
 
     static bool isPlayerDead;
     public GameObject loseScreen;
+    GameObject[] gameObjects;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         isPlayerDead = false;
         loseScreen.SetActive(false);
 	}
@@ -18,6 +19,20 @@ public class gameManager : MonoBehaviour {
 	void Update () {
         if (isPlayerDead)
         {
+            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+
+            for (var i = 0; i < gameObjects.Length; i++)
+            {
+                Destroy(gameObjects[i]);
+            }
+
+            gameObjects = GameObject.FindGameObjectsWithTag("shot");
+
+            for (var i = 0; i < gameObjects.Length; i++)
+            {
+                Destroy(gameObjects[i]);
+            }
+
             loseScreen.SetActive(true);
         }
 	}
