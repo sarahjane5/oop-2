@@ -13,7 +13,7 @@ public class EnemyShoot : MonoBehaviour
     void Start()
     {
         nextShot = Random.Range(1, 6.0f);
-        timeBetweenShots = Random.Range(3, 9f);
+        timeBetweenShots = Random.Range(2, 6f);
     }
 
     // Update is called once per frame
