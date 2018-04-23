@@ -34,6 +34,7 @@ public class gameManager : MonoBehaviour {
             }
 
             loseScreen.SetActive(true);
+            Score.score = 0;
         }
 	}
 
