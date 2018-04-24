@@ -12,7 +12,7 @@ public class gameManager : MonoBehaviour {
     GameObject[] gameObjects;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         isPlayerDead = false;
         loseScreen.SetActive(false);
         winScreen.SetActive(false);
@@ -60,7 +60,7 @@ public class gameManager : MonoBehaviour {
             Score.score = 0;
         }
 
-        if (Score.score == 25)
+        if (Score.score == 1)
         {
             winGame();
         }
@@ -69,12 +69,15 @@ public class gameManager : MonoBehaviour {
     public void Restart()
     {
         //SceneManager.LoadScene(1);
+        Score.score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
 
     }
 
     public void Continue()
     {
+        Score.score = 0;
+        winScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }

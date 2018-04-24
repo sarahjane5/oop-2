@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NSI1.unity
     guid: b950ca371d8e97c42a0d7eb83635489e
+  - enabled: 1
+    path: Assets/NSI2.unity
+    guid: c3a6985fb02d8c747aa701b044f1ce8b
