@@ -24,6 +24,14 @@ public class ShotControl : MonoBehaviour
         FindObjectOfType<PlayerControl>().HasShot = false;
     }
 
+    void DestroyEgg()
+    {
+        if (gameObject.transform.position.y >= 3)
+        {
+            Debug.Log("test"); //DOESNT WORK
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == target)
