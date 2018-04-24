@@ -6,13 +6,16 @@ using UnityEngine;
 public class gameManager : MonoBehaviour {
 
     static bool isPlayerDead;
+    static bool hasWon;
     public GameObject loseScreen;
+    public GameObject winScreen;
     GameObject[] gameObjects;
 
     // Use this for initialization
     void Start () {
         isPlayerDead = false;
         loseScreen.SetActive(false);
+        winScreen.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -36,11 +39,44 @@ public class gameManager : MonoBehaviour {
             loseScreen.SetActive(true);
             Score.score = 0;
         }
+
+        if (hasWon)
+        {
+            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+
+            for (var i = 0; i < gameObjects.Length; i++)
+            {
+                Destroy(gameObjects[i]);
+            }
+
+            gameObjects = GameObject.FindGameObjectsWithTag("shot");
+
+            for (var i = 0; i < gameObjects.Length; i++)
+            {
+                Destroy(gameObjects[i]);
+            }
+
+            winScreen.SetActive(true);
+            Score.score = 0;
+        }
+
+        if (Score.score == 25)
+        {
+            winGame();
+        }
 	}
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
     public static void playerDead()
@@ -52,4 +88,9 @@ public class gameManager : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
     }
-}
+
+    public static void winGame()
+    {
+        hasWon = true;
+    }
+ }
