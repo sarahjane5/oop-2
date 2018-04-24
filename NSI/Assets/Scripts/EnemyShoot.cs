@@ -23,8 +23,7 @@ public class EnemyShoot : MonoBehaviour
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
 
-            //AudioSource audio = gameObject.AddComponent<AudioSource>();
-            //audio.PlayOneShot((AudioClip)Resources.Load("filename"));​
+            FindObjectOfType<AudioManager>().Play("shot");
 
             nextShot = Time.time + timeBetweenShots;
         }
