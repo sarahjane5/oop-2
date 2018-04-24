@@ -23,7 +23,7 @@ public class EnemyShoot : MonoBehaviour
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
 
-            FindObjectOfType<AudioManager>().Play("shot");
+            FindObjectOfType<AudioManager>().Play("Shot");
 
             nextShot = Time.time + timeBetweenShots;
         }

@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 
     private int moveSpeed = 6;
     public GameObject shot;
-    public bool HasShot;
+    public bool HasShot = false;
 
     // Use this for initialization
     void Start () {

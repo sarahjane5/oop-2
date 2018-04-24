@@ -37,7 +37,7 @@ public class ShotControl : MonoBehaviour
                 Score.updateScore();
             }
 
-            FindObjectOfType<AudioManager>().Play("DeathSound");
+            FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(other.gameObject);
             GameObject fire = (GameObject)Instantiate(explosion,other.gameObject.transform.position,Quaternion.identity);
             Destroy(fire,1.0f);
