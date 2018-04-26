@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/NSI1.unity
+- path: Assets/Scenes/NSI.unity
   isLoaded: 1
   isActive: 1

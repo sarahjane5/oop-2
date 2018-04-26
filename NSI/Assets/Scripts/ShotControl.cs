@@ -21,7 +21,7 @@ public class ShotControl : MonoBehaviour
     {
         Destroy(gameObject);
 
-        FindObjectOfType<PlayerControl>().HasShot = false;
+        /*FindObjectOfType<PlayerControl>().HasShot = false;*/
     }
 
     void DestroyEgg()

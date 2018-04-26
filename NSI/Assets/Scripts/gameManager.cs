@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         isPlayerDead = false;
+        hasWon = false;
         loseScreen.SetActive(false);
         winScreen.SetActive(false);
 	}
@@ -40,7 +41,7 @@ public class gameManager : MonoBehaviour {
             Score.score = 0;
         }
 
-        if (hasWon)
+        else if (hasWon)
         {
             gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -60,7 +61,7 @@ public class gameManager : MonoBehaviour {
             Score.score = 0;
         }
 
-        if (Score.score == 1)
+        if (Score.score == 25)
         {
             winGame();
         }
@@ -70,7 +71,7 @@ public class gameManager : MonoBehaviour {
     {
         //SceneManager.LoadScene(1);
         Score.score = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        SceneManager.LoadScene(1);
 
     }
 
