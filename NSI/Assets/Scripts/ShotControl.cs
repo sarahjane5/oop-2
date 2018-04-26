@@ -17,6 +17,14 @@ public class ShotControl : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
     }
 
+    void Update()
+    {
+        if ((transform.position.y >= 4.8 && transform.position.y <= 5.2)&& tag == "playershot")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void OnBecameInvisible()
     {
         Destroy(gameObject);
@@ -24,13 +32,6 @@ public class ShotControl : MonoBehaviour
         /*FindObjectOfType<PlayerControl>().HasShot = false;*/
     }
 
-    void DestroyEgg()
-    {
-        if (gameObject.transform.position.y >= 3)
-        {
-            Debug.Log("test"); //DOESNT WORK
-        }
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
