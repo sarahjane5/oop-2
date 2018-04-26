@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 
     private int moveSpeed = 6;
     public GameObject shot;
-    //public bool HasShot = false;
+    public bool HasShot = false;
 
     // Use this for initialization
     void Start () {
@@ -40,10 +40,9 @@ public class PlayerControl : MonoBehaviour {
             }
         }
 
-        if (/*HasShot == false && */ Input.GetKeyDown("space"))
+        if (HasShot == false && Input.GetKeyDown("space"))
         {
             Instantiate(shot, transform.position, Quaternion.identity);
-            //HasShot = true;
         }
     }
 }
