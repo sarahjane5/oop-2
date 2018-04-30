@@ -20,24 +20,20 @@ public class ShotControl : MonoBehaviour
     void Update()
     {
 
-        if ((transform.position.y >= 4.8 && transform.position.y <= 5.2)&& tag == "playershot")
+        if ((transform.position.y >= 4.8 && transform.position.y <= 5.2) && tag == "playershot")
         {
             Destroy(gameObject);
-        }
-
-        if (gameObject == null && gameObject.tag == "playershot")
-        {
-            FindObjectOfType<PlayerControl>().HasShot = false;
-        }
-        else
-        {
-            FindObjectOfType<PlayerControl>().HasShot = true;
         }
     }
 
     void OnBecameInvisible()
     {
         Destroy(gameObject);
+
+        if (gameObject.tag == "playershot")
+        {
+            FindObjectOfType<PlayerControl>().HasShot = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -51,12 +47,13 @@ public class ShotControl : MonoBehaviour
             else
             {
                 Score.updateScore();
+                FindObjectOfType<PlayerControl>().HasShot = false;
             }
 
             FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(other.gameObject);
-            GameObject fire = (GameObject)Instantiate(explosion,other.gameObject.transform.position,Quaternion.identity);
-            Destroy(fire,1.0f);
+            GameObject fire = (GameObject)Instantiate(explosion, other.gameObject.transform.position, Quaternion.identity);
+            Destroy(fire, 1.0f);
             Destroy(gameObject);
         }
     }

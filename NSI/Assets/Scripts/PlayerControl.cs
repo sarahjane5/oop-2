@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{
 
     private int moveSpeed = 6;
     public GameObject shot;
-    public bool HasShot = false;
+    public bool HasShot;
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start()
+    {
+        HasShot = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -43,6 +45,11 @@ public class PlayerControl : MonoBehaviour {
         if (HasShot == false && Input.GetKeyDown("space"))
         {
             Instantiate(shot, transform.position, Quaternion.identity);
+            HasShot = true;
+        }
+        else
+        {
+            return;
         }
     }
 }
