@@ -368,9 +368,9 @@ MonoBehaviour:
     height: 510
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c270000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: c865ffff168dffff4296ffff7cbeffffc4c1ffff70c6ffff84f9ffff1afcffff00000000ea2a0000882b0000a82b0000e22b00004c3000007c300000f23000001031000044310000e6320000aa330000d63300004434000072340000ec3400000835000034350000
+    m_ExpandedIDs: b0f1ffff7cf2ffffd8f5ffff72f7ffff26f9ffff34f9ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300007226000000270000f8260000ec2d000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
