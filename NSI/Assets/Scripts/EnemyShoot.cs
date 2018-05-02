@@ -6,7 +6,7 @@ public class EnemyShoot : MonoBehaviour
 {
 
     public float timeBetweenShots;
-    public float nextShot = -1;
+    public float nextShot = 0;
     public GameObject bullet;
 
     // Use this for initialization
