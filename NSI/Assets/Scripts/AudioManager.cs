@@ -23,7 +23,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        //Makes the soundtrack continue regardless of the user changing between scenes
         DontDestroyOnLoad(gameObject);
+
 
         foreach (Sound s in sounds)
         {
@@ -49,11 +51,13 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        //Plays the main theme when the script is called
         Play("MainTheme");
     }
 
     public void SetVolume(float volume)
     {
+        //creates a slider for the MasterVolume volume setting
         audiomixer.SetFloat("MasterVolume", volume);
     }
 }

@@ -21,6 +21,8 @@ public class gameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Checks if isPlayerDead is true then finds all the objects with enemy and shot tags and destroys them 
+        //Activates Lose Screen and sets the score variable inside the score script to 0
         if (isPlayerDead)
         {
             gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
@@ -41,6 +43,8 @@ public class gameManager : MonoBehaviour {
             Score.score = 0;
         }
 
+        //Checks if HasWon is true then finds all the objects with enemy and shot tags and destroys them 
+        //Activates Win Screen and sets the score variable inside the score script to 0
         else if (hasWon)
         {
             gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
@@ -61,6 +65,7 @@ public class gameManager : MonoBehaviour {
             Score.score = 0;
         }
 
+        //Checks if score is equal to 25 and if true it calls the winGame function
         if (Score.score == 25)
         {
             winGame();
@@ -69,7 +74,7 @@ public class gameManager : MonoBehaviour {
 
     public void Restart()
     {
-        //SceneManager.LoadScene(1);
+        //Sets the score to 0 and loads the first scene in the build index
         Score.score = 0;
         SceneManager.LoadScene(1);
 
@@ -77,6 +82,7 @@ public class gameManager : MonoBehaviour {
 
     public void Continue()
     {
+        //Sets the score to 0 and deactivates the win screen then loads the following scene
         Score.score = 0;
         winScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -85,16 +91,19 @@ public class gameManager : MonoBehaviour {
 
     public static void playerDead()
     {
+        //Sets the isPlayerDead boolean to true
         isPlayerDead = true;
     }
 
     public void Home()
     {
+        //Loads the main menu (first scene)
         SceneManager.LoadScene(0);
     }
 
     public static void winGame()
     {
+        //Sets the hasWon boolean to true
         hasWon = true;
     }
  }
